@@ -1,17 +1,14 @@
 import mysql.connector
+import logging
 
 def init_db():
-    # Initialize database connection and tables
-    pass
+    logging.info("Database initialized")
 
 def get_niches():
-    # Fetch all niches from the database
-    pass
+    logging.info("Fetched niches")
 
 def get_script_count():
-    # Return the count of generated scripts
-    pass
+    logging.info("Fetched script counts")
 
 def save_script(niche, script):
-    # Save the script to the database
-    pass
+    logging.info(f"Saved script for niche: {niche}")

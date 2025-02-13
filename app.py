@@ -1,19 +1,10 @@
-from flask import Flask, render_template, request, redirect, url_for
-from generate_script import generate_voiceover_script
-import database
+from flask import Flask
+from routes import routes_bp
 
 app = Flask(__name__)
-
-@app.route('/', methods=['GET', 'POST'])
-def index():
-    if request.method == 'POST':
-        niche = request.form['niche']
-        script = generate_voiceover_script(niche)
-        return render_template('index.html', script=script)
-    
-    return render_template('index.html', script=None)
+app.register_blueprint(routes_bp)
 
 if __name__ == "__main__":
-    database.init_db()  # Ensure the database is ready
+    from database import init_db
+    init_db()
     app.run(debug=True)
-

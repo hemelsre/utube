@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Voice-over Script Generator</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Voiceover Script Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Generate AI Voice-over Script</h1>
-    <form method="POST">
-        <label for="niche">Enter Niche:</label>
-        <input type="text" id="niche" name="niche" required>
+    <h1>Voiceover Script Generator</h1>
+    <form method="post" action="/generate">
+        <input type="text" name="niche" placeholder="Enter niche" required>
         <button type="submit">Generate Script</button>
     </form>
-
-    {% if script %}
-    <h2>Generated Script</h2>
-    <pre>{{ script }}</pre>
-    {% endif %}
+    <h2>Generated Scripts</h2>
+    <p>Script Count: {{ counts }}</p>
+    <h2>Niches</h2>
+    <ul>
+        {% for niche in niches %}
+        <li>{{ niche }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Logs</h2>
+    <div id="log-section">
+        <!-- Logs will be shown here -->
+    </div>
 </body>
 </html>
-
