@@ -4,4 +4,4 @@ __pycache__/
 *.so 
 *.egg 
 .env 
-
+config.py
