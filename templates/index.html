@@ -14,6 +14,7 @@
     </form>
     <button onclick="startProcess()">Start Continuous Generation</button>
     <button onclick="stopProcess()">Stop Generation</button>
+    <button id="testScriptBtn" class="btn btn-primary">Test and View Script</button>
     <h2>Generated Scripts</h2>
     <p>Script Count: {{ counts }}</p>
     <h2>Niches</h2>
@@ -23,17 +24,7 @@
         {% endfor %}
     </ul>
     <h2>Logs</h2>
-    <div id="log-section">
-        <!-- Logs will be shown here -->
-    </div>
-
-    <script>
-        function startProcess() {
-            alert('Starting continuous script generation...');
-        }
-        function stopProcess() {
-            alert('Stopping the script generation...');
-        }
-    </script>
+    <div id="log-section"></div>
+    <script src="/static/js/script_test.js"></script>
 </body>
 </html>

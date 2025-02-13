@@ -5,3 +5,4 @@ input[type="text"] { padding: 8px; margin-right: 10px; }
 button { padding: 8px 15px; background-color: #28a745; color: white; border: none; cursor: pointer; }
 button:hover { background-color: #218838; }
 #log-section { background: #fff; padding: 15px; border: 1px solid #ddd; margin-top: 20px; }
+#testScriptBtn { margin-top: 10px; background-color: #007bff; }
