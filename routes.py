@@ -1,4 +1,3 @@
-```python
 from flask import Blueprint, render_template, request
 from generate_script import generate_voiceover_script
 from scheduler import start_scheduler, stop_scheduler
@@ -17,4 +16,3 @@ def generate():
     niche = request.form['niche']
     script = generate_voiceover_script(niche)
     return render_template('index.html', script=script)
-```

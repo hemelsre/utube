@@ -1,5 +1,3 @@
-## `database.py`
-```python
 import mysql.connector
 
 def init_db():
@@ -17,4 +15,3 @@ def get_script_count():
 def save_script(niche, script):
     # Save the script to the database
     pass
-```

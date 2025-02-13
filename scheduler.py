@@ -1,4 +1,3 @@
-```python
 from apscheduler.schedulers.background import BackgroundScheduler
 
 scheduler = BackgroundScheduler()
@@ -8,4 +7,3 @@ def start_scheduler():
 
 def stop_scheduler():
     scheduler.shutdown()
-```

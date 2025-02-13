@@ -1,4 +1,3 @@
-```python
 from openai import OpenAI
 from database import save_script
 
@@ -8,4 +7,4 @@ def generate_voiceover_script(niche):
     script = response.choices[0].text.strip()
     save_script(niche, script)
     return script
-```
+
