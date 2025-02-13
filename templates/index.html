@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voiceover Script Dashboard</title>
+    <title>Voiceover Script Generator</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <h1>Voiceover Script Generator</h1>
-    <form method="post" action="/generate">
+    <form method="post" action="/generate_script">
         <input type="text" name="niche" placeholder="Enter niche" required>
         <button type="submit">Generate Script</button>
     </form>
     <button onclick="testScript()">Test Script</button>
-    <h2>Logs</h2>
-    <div id="log-section"></div>
+    <h2>Output</h2>
+    <div id="output-section"></div>
 
     <script>
         function testScript() {
             fetch('/test_script')
                 .then(response => response.json())
-                .then(data => alert('Script: ' + data.script))
+                .then(data => {
+                    document.getElementById('output-section').innerText = data.output;
+                })
                 .catch(err => alert('Error: ' + err));
         }
     </script>
