@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,19 +11,17 @@
         <input type="text" name="niche" placeholder="Enter niche" required>
         <button type="submit">Generate Script</button>
     </form>
-    <button onclick="startProcess()">Start Continuous Generation</button>
-    <button onclick="stopProcess()">Stop Generation</button>
-    <button id="testScriptBtn" class="btn btn-primary">Test and View Script</button>
-    <h2>Generated Scripts</h2>
-    <p>Script Count: {{ counts }}</p>
-    <h2>Niches</h2>
-    <ul>
-        {% for niche in niches %}
-        <li>{{ niche }}</li>
-        {% endfor %}
-    </ul>
+    <button onclick="testScript()">Test Script</button>
     <h2>Logs</h2>
     <div id="log-section"></div>
-    <script src="/static/js/script_test.js"></script>
+
+    <script>
+        function testScript() {
+            fetch('/test_script')
+                .then(response => response.json())
+                .then(data => alert('Script: ' + data.script))
+                .catch(err => alert('Error: ' + err));
+        }
+    </script>
 </body>
 </html>
