@@ -12,6 +12,8 @@
         <input type="text" name="niche" placeholder="Enter niche" required>
         <button type="submit">Generate Script</button>
     </form>
+    <button onclick="startProcess()">Start Continuous Generation</button>
+    <button onclick="stopProcess()">Stop Generation</button>
     <h2>Generated Scripts</h2>
     <p>Script Count: {{ counts }}</p>
     <h2>Niches</h2>
@@ -24,5 +26,14 @@
     <div id="log-section">
         <!-- Logs will be shown here -->
     </div>
+
+    <script>
+        function startProcess() {
+            alert('Starting continuous script generation...');
+        }
+        function stopProcess() {
+            alert('Stopping the script generation...');
+        }
+    </script>
 </body>
 </html>
